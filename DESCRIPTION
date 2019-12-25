@@ -16,8 +16,10 @@ Description: O Posto Meteorológico da ESALQ/USP está localizado nas
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Depends: R (>= 3.1.0)
 Suggests: 
     covr,
     testthat,
     spelling
 Language: en-US
+RoxygenNote: 7.0.0

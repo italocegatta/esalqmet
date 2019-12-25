@@ -5,7 +5,8 @@
 
 <!-- badges: start -->
 
-[![Travis build
+![CRAN status](https://www.r-pkg.org/badges/version/esalqmet) [![Travis
+build
 status](https://travis-ci.org/italocegatta/esalqmet.svg?branch=master)](https://travis-ci.org/italocegatta/esalqmet)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/italocegatta/esalqmet?branch=master&svg=true)](https://ci.appveyor.com/project/italocegatta/esalqmet)
