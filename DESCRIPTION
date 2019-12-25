@@ -1,0 +1,23 @@
+Package: esalqmet
+Title: Acesso aos Dados do Posto Meteorológico da ESALQ/USP
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Italo",
+           family = "Cegatta",
+           role = c("aut", "cre"),
+           email = "italocegatta@gmail.com")
+Description: O Posto Meteorológico da ESALQ/USP está localizado nas 
+    dependências do LEB - Departamento de Engenharia de Biossistemas
+    da ESALQ - USP na cidade de Piracicaba - SP. As coordenadas geográficas
+    do posto são as seguintes: Latitude: 22° 42' 30'' sul
+    Longitude: 47o 38' 00'' oeste  e Altitude de 546 metros. O Posto é 
+    constituído de uma Estação Convencional com dados diários e uma Estação 
+    Automática, que realiza observações meteorológicas a cada 15 minutos.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    covr,
+    testthat,
+    spelling
+Language: en-US
