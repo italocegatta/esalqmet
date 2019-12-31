@@ -69,7 +69,7 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#esalqmet" class="anchor"></a>esalqmet</h1></div>
 <!-- badges: start -->
-<p>[<img src="https://www.r-pkg.org/badges/version/esalqmet" alt="CRAN status">] <a href="https://travis-ci.org/italocegatta/esalqmet"><img src="https://travis-ci.org/italocegatta/esalqmet.svg?branch=master" alt="Travis build status"></a> <a href="https://ci.appveyor.com/project/italocegatta/esalqmet"><img src="https://ci.appveyor.com/api/projects/status/github/italocegatta/esalqmet?branch=master&amp;svg=true" alt="AppVeyor build status"></a> <a href="https://codecov.io/gh/italocegatta/esalqmet?branch=master"><img src="https://codecov.io/gh/italocegatta/esalqmet/branch/master/graph/badge.svg" alt="Codecov test coverage"></a> <!-- badges: end --></p>
+<p><img src="https://www.r-pkg.org/badges/version/esalqmet" alt="CRAN status"><a href="https://travis-ci.org/italocegatta/esalqmet"><img src="https://travis-ci.org/italocegatta/esalqmet.svg?branch=master" alt="Travis build status"></a> <a href="https://ci.appveyor.com/project/italocegatta/esalqmet"><img src="https://ci.appveyor.com/api/projects/status/github/italocegatta/esalqmet?branch=master&amp;svg=true" alt="AppVeyor build status"></a> <!-- badges: end --></p>
 <p>The goal of esalqmet is to …</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -82,8 +82,19 @@
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>This is a basic example which shows you how to solve a common problem:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(esalqmet)</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="co">## basic example code</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(esalqmet)</a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(tidyverse)</a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(lubridate)</a>
+<a class="sourceLine" id="cb2-5" title="5"></a>
+<a class="sourceLine" id="cb2-6" title="6">esalqmet_automatic <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="st">  </span><span class="kw">group_by</span>(<span class="dt">ano =</span> <span class="kw">floor_date</span>(data, <span class="st">"year"</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">ppt =</span> <span class="kw"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(ppt, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(ano, ppt)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="st">    </span><span class="kw">geom_area</span>(<span class="dt">fill =</span> <span class="st">"cadetblue"</span>, <span class="dt">alpha =</span> <span class="fl">0.7</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="st">    </span><span class="kw">scale_x_date</span>(<span class="dt">date_breaks =</span> <span class="st">"2 year"</span>, <span class="dt">date_labels =</span> <span class="st">"%Y"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="st">    </span><span class="kw">theme_bw</span>()</a></code></pre></div>
+<p><img src="reference/figures/README-example-1.png" width="100%"></p>
 </div>
 </div>
   </div>

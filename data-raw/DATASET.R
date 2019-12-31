@@ -35,7 +35,7 @@ for (i in seq_len(nrow(links))) {
 
 }
 
-brutos_emc <- list.files("data-raw/raw_files", pattern = "conventional_.+.xls", full.names = TRUE) %>%
+bruto_convencional <- list.files("data-raw/raw_files", pattern = "conventional_.+.xls", full.names = TRUE) %>%
   map(~suppressMessages({read_excel(.x)})) %>%
   map(~mutate_all(.x, as.character)) %>%
   bind_rows() %>%
@@ -48,15 +48,15 @@ brutos_emc <- list.files("data-raw/raw_files", pattern = "conventional_.+.xls", 
   ) %>%
   filter(as.numeric(nda) %in% 1:367)
 
-brutos_emc[brutos_emc$nda == 246 & brutos_emc$ano == 1929, "mes"] <- "SET"
-brutos_emc[brutos_emc$nda == 301 & brutos_emc$ano == 1933, "dia"] <- 28
-brutos_emc[brutos_emc$nda == 120 & brutos_emc$ano == 1943, "dia"] <- 30
-brutos_emc[brutos_emc$nda == 165 & brutos_emc$ano == 1948, "dia"] <- 13
-brutos_emc[brutos_emc$nda == 120 & brutos_emc$ano == 1955, "dia"] <- 30
-brutos_emc[brutos_emc$nda == 121 & brutos_emc$ano == 1956, "dia"] <- 30
-brutos_emc[brutos_emc$nda == 138 & brutos_emc$ano == 1963, "dia"] <- 18
+bruto_convencional[bruto_convencional$nda == 246 & bruto_convencional$ano == 1929, "mes"] <- "SET"
+bruto_convencional[bruto_convencional$nda == 301 & bruto_convencional$ano == 1933, "dia"] <- 28
+bruto_convencional[bruto_convencional$nda == 120 & bruto_convencional$ano == 1943, "dia"] <- 30
+bruto_convencional[bruto_convencional$nda == 165 & bruto_convencional$ano == 1948, "dia"] <- 13
+bruto_convencional[bruto_convencional$nda == 120 & bruto_convencional$ano == 1955, "dia"] <- 30
+bruto_convencional[bruto_convencional$nda == 121 & bruto_convencional$ano == 1956, "dia"] <- 30
+bruto_convencional[bruto_convencional$nda == 138 & bruto_convencional$ano == 1963, "dia"] <- 18
 
-esalqmet_automatic <- brutos_emc %>%
+esalqmet_conventional <- bruto_convencional %>%
   mutate(data = dmy(str_glue("{dia} {mes} {ano}"))) %>%
   filter(!is.na(data)) %>%
   mutate_if(is.character, as.numeric) %>%
